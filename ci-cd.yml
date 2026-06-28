@@ -1,0 +1,50 @@
+# =====================================================
+# AgriCrop – Environment Variables Template
+# Copy this file to .env and fill in configuration
+# =====================================================
+
+# ----- Application -----
+APP_NAME=AgriCrop
+APP_ENV=development
+APP_PORT=8000
+FRONTEND_URL=http://localhost:8080
+
+# ----- Security & JWT -----
+SECRET_KEY=generate-a-secure-secret-key-of-at-least-64-characters
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+REFRESH_TOKEN_EXPIRE_DAYS=30
+
+# ----- MongoDB Database -----
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net
+MONGODB_DB_NAME=agricrop
+
+# ----- SMTP Email -----
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=
+SMTP_PASSWORD=
+FROM_EMAIL=noreply@agricrop.app
+EMAIL_ENABLED=false
+
+# ----- AI Model Paths -----
+DISEASE_MODEL_PATH=./ai_models/saved_models/disease_model.h5
+SOIL_MODEL_PATH=./ai_models/saved_models/soil_model.h5
+DISEASE_CLASSES_PATH=./datasets/disease/disease_labels.csv
+MODEL_CONFIDENCE_THRESHOLD=0.65
+
+# ----- CORS -----
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8080
+
+# ----- Rate Limiting -----
+RATE_LIMIT_REQUESTS=100
+RATE_LIMIT_WINDOW_SECONDS=60
+
+# ----- File Upload -----
+MAX_UPLOAD_SIZE_MB=10
+ALLOWED_IMAGE_EXTENSIONS=jpg,jpeg,png,webp,bmp
+UPLOAD_TEMP_DIR=./tmp/agricrop_uploads
+
+# ----- Logging -----
+LOG_LEVEL=INFO
+LOG_FILE=./logs/agricrop.log
